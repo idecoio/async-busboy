@@ -18,7 +18,7 @@ module.exports = function (request, options) {
     const fields = {};
     const filePromises = [];
 
-    request.on('close', cleanup);
+//    request.on('close', cleanup); // commented out to fix Node 16 race condition
 
     busboy
       .on('field', onField.bind(null, fields))
